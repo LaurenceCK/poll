@@ -12,11 +12,24 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { ChartComponent } from './chart/chart.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProgressComponent } from './progress/progress.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+
+
 
 
 @NgModule({
   imports:      [ 
     BrowserModule, 
+    BrowserAnimationsModule,
+    FormsModule,
+    NgCircleProgressModule.forRoot({}),
+
+    // ngx charts
+    NgxChartsModule,
     AngularFireModule.initializeApp(environment.firebase,'poll'),
     AngularFirestoreModule,
     AngularFireAuthModule,
@@ -25,9 +38,10 @@ import { environment } from '../environments/environment';
     DragDropModule,
     DragDropModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    
    ],
-  declarations: [ AppComponent, HelloComponent, ArrayComponent,],
+  declarations: [ AppComponent, HelloComponent, ArrayComponent, ChartComponent, ProgressComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

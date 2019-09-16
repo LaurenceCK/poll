@@ -1,0 +1,22 @@
+
+<div flex-gt-sm="50">
+  <div class="pad">
+    <div [style.height.px]="250">
+      <ngx-charts-bar-vertical
+        [results]="single"
+        [view]=[700,500]
+        [scheme]="{ domain: [ '#30E07B', '#E75691', '#00C0FF', '#5D6A75','#D2B75F' ] }"
+        [barPadding]="10"
+        [gradient]="true"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="true"
+        [legendTitle]="'Task List'"
+        [xAxisLabel]="'Date'"
+        [yAxisLabel]="'Completion'"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true">
+      </ngx-charts-bar-vertical>
+    </div>
+  </div>
+</div>
